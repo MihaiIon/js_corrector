@@ -1,3 +1,4 @@
+// ======================================================
 // Helpers
 // ======================================================
 
@@ -6,18 +7,14 @@
  * scope.
  * @param {*} obj Javascript Object.
  */
-var exists = function(obj) {
-  return typeof obj !== "undefined";
-};
+var exists = obj => typeof obj !== "undefined";
 
 /**
  * Checks if the received object is of the expected type.
  * @param {*} obj Javascript Object.
  * @param {string} expected Expected type.
  */
-var isType = function(obj, expected) {
-  return exists(obj) && typeof obj === expected;
-};
+var isType = (obj, expected) => exists(obj) && typeof obj === expected;
 
 /**
  * Checks if the received object is equal to the expected
@@ -27,14 +24,24 @@ var isType = function(obj, expected) {
  * @param {*} expected Expected value.
  * @param {function} fn (Optional) Custom validation function.
  */
-var isEqual = function(obj, expected, fn) {
+var isEqual = (obj, expected, fn) => {
   if (!exists(obj) || !exists(expected)) return false;
   return exists(fn) ? fn(obj, expected) : obj === expected;
 };
 
 /**
+ * Generates a string based on a string template and a list
+ * of arguments.
  *
- * @param {string} template
+ * Ex:
+ *
+ * // Code
+ * formatString("$1 $2!", "Hello", "world");
+ *
+ * // Output
+ * "Hello world!"
+ *
+ * @param {string} template String template.
  */
 var formatString = function(template) {
   var output = template + "";
@@ -45,29 +52,11 @@ var formatString = function(template) {
 };
 
 /**
- * Executes and returns the value of the received function
+ * Executes and returns the value of the received function.
  * @param {function} fn Function to execute.
  * @param {[]} args Function's arguments.
  */
-var run = function(fn, args) {
-  return fn.apply(null, args);
-};
+var run = (fn, args) => fn.apply(null, args);
 
-// Errors
-// ======================================================
-
-var createTypeError = function(obj, name, expected) {
-  return formatString(
-    "La variable '$1' doit être de type '$2', mais celle-ci est de type '$3'.",
-    name,
-    expected,
-    typeof obj
-  );
-};
-
-var createFormatError = function(name) {
-  return formatString(
-    "La variable '$1' ne correspond pas à la chaîne attendue.",
-    name
-  );
-};
+// Jimmy Martinez - PDFs
+// Ronald Gedeon - PDFs
