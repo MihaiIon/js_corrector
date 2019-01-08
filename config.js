@@ -6,12 +6,9 @@
 var path = require("path");
 
 module.exports = {
-  root: __dirname,
-  getOutputConfiguration: function(currentDirectory) {
-    var dir = path.resolve(currentDirectory, "./build");
-    return {
-      dir: dir,
-      file: dir + "\\index.js"
-    };
+  __root: __dirname,
+  output: {
+    dir: path.resolve(__dirname, "./build"),
+    file: path.resolve(__dirname, "./build/index.js")
   }
 };

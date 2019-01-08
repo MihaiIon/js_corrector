@@ -18,7 +18,7 @@ babel.transform(code, {}, function(err, result) {
   if (err) console.log(err);
   else {
     // Get output configuration
-    var output = config.getOutputConfiguration(__dirname);
+    var output = config.output;
 
     // Create output folder
     if (!fs.existsSync(output.dir)) {
@@ -35,7 +35,10 @@ babel.transform(code, {}, function(err, result) {
     fs.writeFileSync(output.file, uglyResult.code);
     console.log(
       "\x1b[32m",
-      `> ** Build exported to '${output.file.replace(__dirname, "[root]")}'\n`,
+      `> ** Build exported to '${output.file.replace(
+        config.__root,
+        "[root]"
+      )}'\n`,
       "\x1b[0m"
     );
   }
