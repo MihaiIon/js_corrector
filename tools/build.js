@@ -18,11 +18,11 @@ babel.transform(code, {}, function(err, result) {
   if (err) console.log(err);
   else {
     // Get output configuration
-    var oConfig = config.getOutputConfiguration(__dirname);
+    var output = config.getOutputConfiguration(__dirname);
 
     // Create output folder
-    if (!fs.existsSync(oConfig.dir)) {
-      fs.mkdirSync(oConfig.dir);
+    if (!fs.existsSync(output.dir)) {
+      fs.mkdirSync(output.dir);
     }
 
     // Uglify
@@ -32,10 +32,10 @@ babel.transform(code, {}, function(err, result) {
     }
 
     // Write to file
-    fs.writeFileSync(oConfig.file, uglyResult.code);
+    fs.writeFileSync(output.file, uglyResult.code);
     console.log(
       "\x1b[32m",
-      `> ** Build exported to '${oConfig.file.replace(__dirname, "[root]")}'\n`,
+      `> ** Build exported to '${output.file.replace(__dirname, "[root]")}'\n`,
       "\x1b[0m"
     );
   }
