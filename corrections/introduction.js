@@ -1,6 +1,13 @@
+// ======================================================
+// Corrections / Introduction
+// ======================================================
+
+/**
+ * Tests all the program.
+ */
 var tests = {
-  testFunction: function() {
-    return new Test()
+  testAll: () =>
+    new Test()
       .assert(
         isType(prenom, "string"),
         10,
@@ -48,6 +55,5 @@ var tests = {
         isEqual(introduction, salutation + "\n" + informations),
         10,
         createFormatError("introduction")
-      );
-  }
+      )
 };
