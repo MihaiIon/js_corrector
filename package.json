@@ -1,5 +1,5 @@
 {
-  "name": "js_corrector",
+  "name": "js_evaluation-tool",
   "version": "1.0.0",
   "description": "Application is used to test a students code/project.",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MihaiIon/js_corrector.git"
+    "url": "git+https://github.com/MihaiIon/js_evaluation-tool.git"
   },
   "keywords": [
     "javascript",
@@ -20,9 +20,9 @@
   "author": "Mihai Ionescu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MihaiIon/js_corrector/issues"
+    "url": "https://github.com/MihaiIon/js_evaluation-tool/issues"
   },
-  "homepage": "https://github.com/MihaiIon/js_corrector#readme",
+  "homepage": "https://github.com/MihaiIon/js_evaluation-tool#readme",
   "dependencies": {
     "@babel/polyfill": "^7.2.5"
   },
