@@ -2,9 +2,6 @@
 // Classes / Test
 // ======================================================
 
-/**
- *
- */
 class Test {
   constructor() {
     this.result = 0;
@@ -12,34 +9,37 @@ class Test {
   }
 
   /**
+   * If the assertion passes (if 'isValid' equals 'true'),
+   * the student is awared an amount of 'points'. The
+   * 'points' are specified in the arguments by the evaluator.
    *
-   * @param {boolean} isValid If the test passed, 'isValid' equals 'true'.
-   * @param {number} value The points that the student is awarded, if 'isValid' equals 'true'.
+   * If the assertion fails, an error message is saved (along
+   * the with the amount of points that the test was worth).
+   *
+   * @param {boolean} isValid Validity of the test.
+   * @param {number} points The points awarded if the test is valid.
    * @param {string} errorMsg The error message.
    */
-  assert(isValid, value, errorMsg) {
-    if (isValid) this.result += value;
-    else
-      this.errors.push({
-        msg: errorMsg,
-        value: value
-      });
+  assert(isValid, points, errorMsg) {
+    if (isValid) this.result += points;
+    else this.errors.push(new TestError(errorMsg, points));
     return this;
   }
 
   /**
-   *
+   * Returns 'true' if there are errors.
    */
   hasErrors() {
     return this.errors.length > 0;
   }
 
   /**
-   *
+   * Displays string containing a list of errors.
+   * Each failed test generates an error object.
    */
   displayErrors() {
     return this.errors.reduce(
-      (str, err) => formatString("$1 (-$2%)\n", str + err.msg, err.value),
+      (str, err) => formatString("$1 (-$2%)\n", str + err.message, err.points),
       ""
     );
   }

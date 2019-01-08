@@ -4,6 +4,7 @@
 
 // require ./_helpers.js
 // require ./errors.js
+// require ./classes/TestError.js
 // require ./classes/Test.js
 // require ./tests/introduction.js
 

@@ -37,7 +37,7 @@ a terminal (at the root of the project).
 
 Add a new JavaScript file in the following folder.
 
-> src / tests
+> \_\_root\_\_ / src / tests
 
 The file should look something like :
 
@@ -47,7 +47,7 @@ The file should look something like :
 // ======================================================
 
 var test = {
-  testName: () =>
+  nameOfTheTest: () =>
     new Test()
       .assert( ... )
       .assert( ... )
@@ -60,7 +60,7 @@ var test = {
 To select a Test, update the following line:
 
 ```js
-// src / index.js
+// [FILE]: __root__ / src / index.js
 
 ...
 
