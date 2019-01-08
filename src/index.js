@@ -5,7 +5,7 @@
 // require ./_helpers.js
 // require ./errors.js
 // require ./classes/Test.js
-// require ../corrections/introduction.js
+// require ./corrections/introduction.js
 
 var resultLabel =
   "===========================\n  Résultat\n===========================\n\n";
