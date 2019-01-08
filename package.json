@@ -1,0 +1,38 @@
+{
+  "name": "js_corrector",
+  "version": "1.0.0",
+  "description": "Application is used to test a students code/project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build": "node tools/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MihaiIon/js_corrector.git"
+  },
+  "keywords": [
+    "javascript",
+    "correction",
+    "assert",
+    "test"
+  ],
+  "author": "Mihai Ionescu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MihaiIon/js_corrector/issues"
+  },
+  "homepage": "https://github.com/MihaiIon/js_corrector#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-template-literals": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "bundle-js": "^1.0.2",
+    "uglify-js": "^3.4.9"
+  }
+}
