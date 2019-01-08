@@ -1,0 +1,52 @@
+{
+  "Test :: assert": {
+    "scope": "javascript",
+    "prefix": "_assert",
+    "body": ".assert(${1:condition}, ${2:value}, ${3:error})$0"
+  },
+  "Helper :: exists": {
+    "scope": "javascript",
+    "prefix": "_ex",
+    "body": "exists(${1:object})$0"
+  },
+  "Helper :: isType": {
+    "scope": "javascript",
+    "prefix": "_ist",
+    "body": "isType(${1:object}, ${2:expectedType})$0"
+  },
+  "Helper :: isEqual": {
+    "scope": "javascript",
+    "prefix": "_ise",
+    "body": "isEqual(${1:object}, ${2:expected})$0"
+  },
+  "Helper :: isEqual (with function)": {
+    "scope": "javascript",
+    "prefix": "_isef",
+    "body": "isEqual(${1:object}, ${2:expected}, (obj, expected) => ${3:{\\}})$0"
+  },
+  "Helper :: formatString": {
+    "scope": "javascript",
+    "prefix": "_fstr",
+    "body": "formatString(${1:template}, ${2:...arguments})$0"
+  },
+  "Helper :: run": {
+    "scope": "javascript",
+    "prefix": "_run",
+    "body": "run(($1) => ${2:{\\}})$0"
+  },
+  "Helper :: run (with arguments)": {
+    "scope": "javascript",
+    "prefix": "_runa",
+    "body": "run(($1) => ${2:{\\}}, [${3:...arguments}])$0"
+  },
+  "Error :: Type Error": {
+    "scope": "javascript",
+    "prefix": "_errt",
+    "body": "createTypeError(${1:object}, ${2:currentType}, ${3:expectedType})$0"
+  },
+  "Error :: Format Error": {
+    "scope": "javascript",
+    "prefix": "_errf",
+    "body": "createFormatError(${1:variableName})$0"
+  }
+}
