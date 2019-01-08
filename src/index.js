@@ -29,6 +29,6 @@ var errorsLabel =
       "%"
   );
 })(
-  tests, // Tests goes here
+  test, // Test goes here
   print // Output function
 );

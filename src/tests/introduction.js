@@ -5,7 +5,7 @@
 /**
  * Tests all the program.
  */
-var tests = {
+var test = {
   testAll: () =>
     new Test()
       .assert(
