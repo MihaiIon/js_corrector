@@ -24,15 +24,17 @@ babel.transform(code, {}, function(err, result) {
     }
 
     // Uglify
-    console.log(result.code);
     var uglyResult = UglifyJS.minify(result.code);
     if (uglyResult.error) {
       console.log(uglyResult.error);
     }
 
     // Write to file
-    console.log(uglyResult);
-
     fs.writeFileSync(oFile, uglyResult.code);
+    console.log(
+      "\x1b[32m",
+      "> ** Build exported to '[root]/build/index.js'\n",
+      "\x1b[0m"
+    );
   }
 });
