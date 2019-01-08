@@ -2,9 +2,6 @@
 // Corrections / Introduction
 // ======================================================
 
-/**
- * Tests all the program.
- */
 var test = {
   testAll: () =>
     new Test()
