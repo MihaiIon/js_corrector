@@ -38,9 +38,8 @@ class Test {
    * Each failed test generates an error object.
    */
   displayErrors() {
-    return this.errors.reduce(
-      (str, err) => formatString("$1 (-$2%)\n", str + err.message, err.points),
-      ""
-    );
+    return this.errors.map(function(err) {
+      return err.message + "; -" + err.points + "%.";
+    }).join("\n");
   }
 }

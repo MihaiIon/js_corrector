@@ -9,9 +9,12 @@
 // require ./tests/introduction.js
 
 var resultLabel =
-  "===========================\n  Résultat\n===========================\n\n";
+  "\n===========================\n  Résultat\n===========================\n\n";
 var errorsLabel =
-  "\n===========================\n  Erreurs\n===========================\n\n";
+  "\n===========================\n  Erreurs\n===========================\n";
+
+if (exists(print)) print(errorsLabel);
+else console.log(errorsLabel);
 
 /**
  *
@@ -24,7 +27,7 @@ var errorsLabel =
         .map(key => obj[key])
         .map(t => t())
         .reduce((acc, t) => {
-          log(t.hasErrors() ? errorsLabel + t.displayErrors() : "");
+          if (t.hasErrors()) log(t.displayErrors());
           return acc + t.result;
         }, 0) +
       "%"
