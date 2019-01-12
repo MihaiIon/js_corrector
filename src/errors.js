@@ -21,11 +21,12 @@ var createTypeError = (obj, name, expected) =>
  * @param {string} name The variable's name.
  * @param {*} expected The variable's expected value.
  */
-var createValueError = (name, expected) =>
+var createValueError = (name, expected, details) =>
   formatString(
-    "La valeur de la variable '$1' doit être égale à $2.",
+    "La valeur de la variable '$1' doit être égale à $2$3.",
     name,
-    expected
+    expected,
+    details ? " " + details : ""
   );
 
 
@@ -37,4 +38,11 @@ var createFormatError = name =>
   formatString(
     "La variable '$1' ne correspond pas à la chaîne de caratères attendue.",
     name
+  );
+
+var createReturnError = (name, details) =>
+  formatString(
+    "La valeur retournée par la fonction '$1' ne correspond au résultat attendu ($2).",
+    name,
+    details
   );

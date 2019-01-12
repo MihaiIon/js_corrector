@@ -6,7 +6,7 @@
 // require ./errors.js
 // require ./classes/TestError.js
 // require ./classes/Test.js
-// require ./tests/introduction.js
+// require ./tests/password.js
 
 var resultLabel =
   "\n===========================\n  Résultat\n===========================\n\n";
@@ -34,5 +34,5 @@ else console.log(errorsLabel);
   );
 })(
   test, // Test goes here
-  print // Output function
+  exists(print) ? print : console.log // Output function
 );
