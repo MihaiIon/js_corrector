@@ -29,6 +29,14 @@ var createValueError = (name, expected, details) =>
     details ? " " + details : ""
   );
 
+var CreateRangeError = (name, min, max) =>
+  formatString(
+    "La valeur de la variable '$1' doit être entre $2 et $3",
+    name,
+    min,
+    max
+  );
+
 
 /**
  * Generates a string format error.

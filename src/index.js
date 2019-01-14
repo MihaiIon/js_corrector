@@ -6,7 +6,7 @@
 // require ./errors.js
 // require ./classes/TestError.js
 // require ./classes/Test.js
-// require ./tests/pi.js
+// require ./tests/dragon.js
 
 var resultLabel =
   "\n===========================\n  Résultat\n===========================\n\n";
