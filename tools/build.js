@@ -33,6 +33,7 @@ babel.transform(code, {}, function(err, result) {
 
     // Write to file
     fs.writeFileSync(output.file, uglyResult.code);
+    console.log(output.file);
     console.log(
       "\x1b[32m",
       `\n> ** Build exported to '${output.file.replace(

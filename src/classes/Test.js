@@ -39,7 +39,7 @@ class Test {
    */
   displayErrors() {
     return this.errors.map(function(err) {
-      return err.message + "; -" + err.points + "%.";
+      return err.message + " (-" + err.points + "%)";
     }).join("\n");
   }
 }
