@@ -26,6 +26,9 @@ var test = {
         isEqual(
           salutation,
           formatString("Bonjour, mon nom est $1 $2!", prenom, nom)
+        ) || isEqual(
+          salutation,
+          formatString("Bonjour, mon nom est $1 $2.", prenom, nom)
         ),
         10,
         createFormatError("salutation")
@@ -39,6 +42,9 @@ var test = {
         isEqual(
           informations,
           formatString("J'ai $1 ans et j'étudie en $2!", age, discipline)
+        ) || isEqual(
+          informations,
+          formatString("J'ai $1 ans et j'étudie en $2.", age, discipline)
         ),
         10,
         createFormatError("informations")
