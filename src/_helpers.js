@@ -97,35 +97,6 @@ var createAssertion = (expr, score, err) => () => {
 
 // ------------------------------------------------------
 
-var ASSERT_ERROR_TYPES = {
-  TYPE_ERROR: 0
-};
-
-/**
- *
- * @param {number} type Error type.
- * @returns {{ type: "ASSERTION_ERROR", msg: string }} Assertion error object.
- */
-var createAssertionError = function(type) {
-  var args = Array.prototype.slice.call(arguments).slice(1);
-  return {
-    type: "ASSERTION_ERROR",
-    msg: (() => {
-      switch (type) {
-        case ASSERT_ERROR_TYPES.TYPE_ERROR:
-          return (
-            `The variable '${args[0]}' was of type '${typeof args[1]}'` +
-            `, but was expected to be of type '${args[2]}'.`
-          );
-        default:
-          return `ERROR_NOT_YET_IMPLEMENTED : type(${type})`;
-      }
-    })()
-  };
-};
-
-// ------------------------------------------------------
-
 /**
  *
  * @param {string} name The object of the test.

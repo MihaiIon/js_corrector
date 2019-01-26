@@ -18,7 +18,13 @@ var tests = [
     createAssertion(
       false,
       10,
-      createTypeError(data, "data", "mihai is testing yoohoo!")
-    )
+      createTypeError(
+        data,
+        "data",
+        "mihai is testing yoohoo!",
+        "And there even details!"
+      )
+    ),
+    createAssertion(false, 20, createValueError("mihai", "true", data))
   ])
 ];
