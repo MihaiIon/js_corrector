@@ -25,6 +25,7 @@ var tests = [
         "And there even details!"
       )
     ),
-    createAssertion(false, 20, createValueError("mihai", "true", data))
+    createAssertion(false, 20, createValueError("mihai", "true", data)),
+    createAssertion(false, 30, CreateRangeError(data, "data", 2, 6, data))
   ])
 ];

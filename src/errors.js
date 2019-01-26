@@ -5,11 +5,9 @@
 var ASSERT_ERROR_TYPES = {
   TYPE_ERROR: 0,
   VALUE_ERROR: 1,
-  VALUE_ERROR: 1,
-  VALUE_ERROR: 1,
-  VALUE_ERROR: 1,
-  VALUE_ERROR: 1,
-  VALUE_ERROR: 1
+  RANGE_ERROR: 2,
+  FORMAT_ERROR: 3,
+  RETRUN_ERROR: 4
 };
 
 /**
@@ -42,6 +40,14 @@ var createAssertionError = function(type) {
             ` but its actual value is '${args[2]}'.` +
             formatDetails(args[3])
           );
+        case ASSERT_ERROR_TYPES.RANGE_ERROR:
+          return (
+            `The variable '${args[1]}' must be between '${args[2]}'` +
+            ` and '${args[3]}', but its actual value is '${args[0]}'` +
+            formatDetails(args[4])
+          );
+        case ASSERT_ERROR_TYPES.FORMAT_ERROR:
+        case ASSERT_ERROR_TYPES.RETRUN_ERROR:
         default:
           return `ERROR_NOT_YET_IMPLEMENTED : type(${type})`;
       }
@@ -79,12 +85,22 @@ var createTypeError = (obj, name, expectedType, details = "") =>
 var createValueError = (name, expected, details) =>
   createAssertionError(ASSERT_ERROR_TYPES.VALUE_ERROR, name, expected, details);
 
-var CreateRangeError = (name, min, max) =>
-  formatString(
-    "La valeur de la variable '$1' doit être entre $2 et $3",
+/**
+ *
+ * @param {*} obj The object that is evaluated.
+ * @param {string} name The variable's name.
+ * @param {number} min Minimum value.
+ * @param {number} max Maximum value.
+ * @returns {{ type: "ASSERTION_ERROR", msg: string }} Assertion error object.
+ */
+var CreateRangeError = (obj, name, min, max, details) =>
+  createAssertionError(
+    ASSERT_ERROR_TYPES.RANGE_ERROR,
+    obj,
     name,
     min,
-    max
+    max,
+    details
   );
 
 /**

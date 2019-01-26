@@ -114,7 +114,7 @@ Testing : ${name}
 ===============================\n
 ${
     failedAssertions.length > 0
-      ? failedAssertions.map(a => `${a.err.msg} | (-${a.score})`)
+      ? failedAssertions.map(a => `${a.err.msg} | (-${a.score})`).join("\n")
       : "All Good!"
   }`;
 };

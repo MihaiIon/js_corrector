@@ -131,7 +131,3 @@ var test = {
       );
   }
 };
-
-var data = {};
-
-var tests = [createTest("Password", [createAssert()])];
