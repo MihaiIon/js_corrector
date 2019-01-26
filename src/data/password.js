@@ -14,7 +14,11 @@ var data = {};
 // ======================================================
 
 var tests = [
-  createTest("Mihai", [createAssertion(false, 10, createAssertionError(0))]),
-  createTest("Mihai", [createAssertion(false, 10, createAssertionError(0))]),
-  createTest("Mihai", [createAssertion(false, 10, createAssertionError(0))])
+  createTest("Mihai", [
+    createAssertion(
+      false,
+      10,
+      createTypeError(data, "data", "mihai is testing yoohoo!")
+    )
+  ])
 ];

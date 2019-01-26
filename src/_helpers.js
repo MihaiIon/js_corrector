@@ -3,28 +3,6 @@
 // ======================================================
 
 /**
- * Generates a string based on a string template and a list
- * of arguments.
- *
- * Ex:
- *
- * // Code
- * formatString("$1 $2!", "Hello", "world");
- *
- * // Output
- * "Hello world!"
- *
- * @param {string} template String template.
- */
-var formatString = function(template) {
-  var output = template + "";
-  for (var i = 1; i < arguments.length; i++) {
-    output = output.replace("$" + i, arguments[i]);
-  }
-  return output;
-};
-
-/**
  * Executes and returns the value of the received function.
  * @param {function} fn Function to execute.
  * @param {[]} args Function's arguments.
@@ -135,7 +113,10 @@ var createAssertionError = function(type) {
     msg: (() => {
       switch (type) {
         case ASSERT_ERROR_TYPES.TYPE_ERROR:
-          return ``;
+          return (
+            `The variable '${args[0]}' was of type '${typeof args[1]}'` +
+            `, but was expected to be of type '${args[2]}'.`
+          );
         default:
           return `ERROR_NOT_YET_IMPLEMENTED : type(${type})`;
       }

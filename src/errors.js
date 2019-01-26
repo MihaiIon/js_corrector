@@ -6,15 +6,10 @@
  * Generates a type error..
  * @param {*} obj The object that is evaluated.
  * @param {string} name The variable's name.
- * @param {string} expected Expected type.
+ * @param {string} expectedType Expected type.
  */
-var createTypeError = (obj, name, expected) =>
-  formatString(
-    "La variable '$1' doit être de type '$2', mais celle-ci est de type '$3'.",
-    name,
-    expected,
-    typeof obj
-  );
+var createTypeError = (obj, name, expectedType) =>
+  createAssertionError(ASSERT_ERROR_TYPES.TYPE_ERROR, name, obj, expectedType);
 
 /**
  * Generates a value error.
@@ -36,7 +31,6 @@ var CreateRangeError = (name, min, max) =>
     min,
     max
   );
-
 
 /**
  * Generates a string format error.
