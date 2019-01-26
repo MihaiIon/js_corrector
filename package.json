@@ -4,8 +4,8 @@
   "description": "Application is used to test a students code/project.",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "build": "node tools/build.js"
+    "build": "node tools/build.js",
+    "test": "node build/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,11 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.1",
     "@babel/plugin-transform-arrow-functions": "^7.2.0",
     "@babel/plugin-transform-classes": "^7.2.2",
+    "@babel/plugin-transform-shorthand-properties": "^7.2.0",
+    "@babel/plugin-transform-spread": "^7.2.2",
     "@babel/plugin-transform-template-literals": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "bundle-js": "^1.0.2",

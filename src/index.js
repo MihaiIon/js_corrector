@@ -1,39 +1,20 @@
 // ======================================================
-// App
+// App / Helpers
 // ======================================================
 
 // require ./_helpers.js
-// require ./errors.js
-// require ./classes/TestError.js
-// require ./classes/Test.js
 
-// require ./tests/password.js
+// ======================================================
+// App / Data
+// ======================================================
 
-var resultLabel =
-  "\n===========================\n  Résultat\n===========================\n\n";
-var errorsLabel =
-  "\n===========================\n  Erreurs\n===========================\n";
+// require ./data/password.js
 
+// ======================================================
+// App / Main
+// ======================================================
 
-/**
- *
- */
-((obj, log) => {
-  log();
-  log(
-    resultLabel +
-      "Votre note est : " +
-      Object.keys(obj)
-        .map(key => obj[key])
-        .filter(t => typeof t === "function")
-        .map(t => t())
-        .reduce((acc, t) => {
-          if (t.hasErrors()) log(t.displayErrors());
-          return acc + t.result;
-        }, 0) +
-      "%"
-  );
-})(
-  test, // Test goes here
-  exists(print) ? print : console.log // Output function
+((tt, log) => tt.forEach(t => log(t())))(
+  tests,
+  exists(console && console.log) ? console.log : print
 );
