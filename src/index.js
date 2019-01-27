@@ -7,7 +7,7 @@
 // require ./classes/TestError.js
 // require ./classes/Test.js
 
-// require ./tests/password.js
+// require ./tests/threeHouses.js
 
 var resultLabel =
   "\n===========================\n  Résultat\n===========================\n\n";
